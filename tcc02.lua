@@ -9,8 +9,8 @@ o=1
 for y=9,x,5 do
 tri(x,y-9,x+w,y,x-w,y,6)
 w=w+2
-if(y>20) then
-circ(x+o,y-8,2,y%6+1)
+if y>9 then
+circ(x+o,y-7,2,y%6+1)
 o=(o+k)%w-w/2
 end
 end

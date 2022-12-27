@@ -14,11 +14,11 @@ circ(x+o,y-7,2,y%6+1)
 o=(o+k)%w-w/2
 end
 end
-for y=1,k do
+rect(x-5,x,9,40,3)
+for y=0,k do
 pix(99*y%240,(t+y)%k,12)
 rect(4*y,k-s(y)+s(9*y/3)-t/x,4,999,12)
 end
-rect(x-5,x,9,40,3)
 end
 -- <TILES>
 -- 001:eccccccccc888888caaaaaaaca888888cacccccccacc0ccccacc0ccccacc0ccc

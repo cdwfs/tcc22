@@ -3,10 +3,10 @@ function TIC()
  t=t+.1
  for y=-68,67 do
   for x=-120,119 do
-   T=m.atan2(y,x)+m.pi
-   D=599/m.sqrt(x*x+y*y+1)
-   c=T*2.546+(D+m.sin(D+t))+math.sin(D)+t
-   pix(x+120,y+68,(c//1&7)+4)
+   T=m.pi+m.atan2(y,x)
+   S=299/m.sqrt(x*x+y*y+1)
+   l=T*2.546+m.sin(S+t)+t+.5*(S+m.sin(S))
+   pix(x+120,y+68,(l//1&7)+4)
   end
 	end
 end

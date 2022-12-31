@@ -1,19 +1,22 @@
-t=0
-s=math.sin
 X="Tiny Code Christmas!"
+t=0
+k=250
+q=120
+r=68
+s=math.sin
 function TIC()
- t=t+1
- for y=-68,67 do
-  for x=-120,119 do
-   T=math.atan2(y,x)*2.546-62.8
-   S=299/(x*x+y*y+1)^.5
-   pix(x+120,y+68,T+S-t*.1)
+ t=t+.1
+ for y=-r,r do
+  for x=-q,q do
+   T=k-math.atan2(y,x)*2.55
+   S=k/(x*x+y*y+1)^.5
+   pix(x+q,y+r,T+S-t)
   end
 	end
  for j=0,1 do
  for i=1,#X do
   print(string.sub(X,i,i),
-  	i*24+250-(t%750)+j,20*s(.1*t+i)+50+j,
+  	i*24+k+j-9*t%750,9*s(t+i)+r+j,
    12*j,0,3)
  end
  end

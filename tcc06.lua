@@ -1,4 +1,3 @@
-X="Tiny Code Christmas!!"
 t=0
 k=250
 q=120
@@ -12,9 +11,9 @@ function TIC()
   end
 	end
  for j=0,9 do
- for i=1,#X do
-  print(string.sub(X,i,i),
-  	i*24+k+j-9*t%750,9*s(t+i)+r+j,
+ for i=1,24 do
+  print(("Tiny Code Christmas 2022"):sub(i,i),
+  	i*24+k+j-9*t%850,9*s(t+i)+r+j,
    3+j,0,3)
  end
  end

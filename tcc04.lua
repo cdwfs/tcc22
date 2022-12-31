@@ -2,7 +2,7 @@ t=0
 s=math.sin
 function TIC()
 	t=t+1
- for i=0,32639 do
+ for i=0,4e4 do
   x=i%240
   y=i//240
   pix(x,y,

@@ -3,7 +3,7 @@ Y=140
 s=math.sin
 for x=0,239 do
  rect(x,0,1,Y,x)
- poke(16320+(x%48),s(x/15+s(x%3*13.7))^2*256)
+ poke(16320+x%48,s(x/9+s(x%3*13.7))^2*256)
 end
 function TIC()
  t=t+.03
@@ -13,9 +13,9 @@ function TIC()
   end
  end
  for T=0,24,5 do
-  circ(Y+(20+15*s(t))*s(.6*t+T+8),
+  circ(Y+(20+9*s(t))*s(.6*t+T+8),
    68+(40+20*s(t-8))*s(t+T),
-   5+2*s(t),9)
+   5+2*s(t),0)
  end
 end
 -- <TILES>

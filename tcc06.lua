@@ -1,4 +1,4 @@
-X="Tiny Code Christmas!"
+X="Tiny Code Christmas!!"
 t=0
 k=250
 q=120
@@ -8,16 +8,14 @@ function TIC()
  t=t+.1
  for y=-r,r do
   for x=-q,q do
-   T=k-math.atan2(y,x)*2.55
-   S=k/(x*x+y*y+1)^.5
-   pix(x+q,y+r,T+S-t)
+   pix(x+q,y+r,k-math.atan2(y,x)*2.55+k/(x*x+y*y+1)^.5-t)
   end
 	end
- for j=0,1 do
+ for j=0,9 do
  for i=1,#X do
   print(string.sub(X,i,i),
   	i*24+k+j-9*t%750,9*s(t+i)+r+j,
-   12*j,0,3)
+   3+j,0,3)
  end
  end
 end

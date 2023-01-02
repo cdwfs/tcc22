@@ -8,7 +8,7 @@ function TIC()
  i=i+1
  t=i/25
  for x=0,238 do
-  poke(16320+x%48,i+9*x)
+  poke(16320+x%24,10*(x+i))
   for y=0,Y do
    R=pix(x+1,y)
    pix(x,y,R&8+R%8)

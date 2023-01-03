@@ -3,12 +3,12 @@ s=math.sin
 cls()
 function TIC()
  t=t+.01
- x=99+95*s(2*t)
- y=68+60*s(7*t)
- for u=-3,3 do
-  for v=-3,3 do
-   pix(x+u,y+v,pix(x+u,y+v)-1)
-  end
+ x=115+115*s(2.1*t)
+ y=63+63*s(9*t)
+ for i=0,80 do
+  u=i%9
+  v=i/9
+  pix(x+u,y+v,pix(x+u,y+v)-1)
  end
 end
 

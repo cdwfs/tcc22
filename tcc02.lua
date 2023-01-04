@@ -1,24 +1,25 @@
-t=0s=math.sin
+t=0
+s=math.sin
 function TIC()
-cls(8)
-t=t+1
-x=119
-k=137
-w=9
-o=1
-for y=9,x,5 do
-tri(x,y-9,x+w,y,x-w,y,6)
-w=w+2
-if y>9 then
-circ(x+o,y-7,2,y%6+1)
-o=(o+k)%w-w/2
-end
-end
-rect(x-5,x,9,40,3)
-for y=0,k do
-pix(99*y%240,(t+y)%k,12)
-rect(4*y,k-s(y)+s(9*y/3)-t/x,4,999,12)
-end
+ cls(8)
+ t=t+1
+ x=119
+ k=137
+ w=9
+ o=1
+ for y=9,x,5 do
+  tri(x,y-9,x+w,y,x-w,y,6)
+  w=w+2
+  if y>9 then
+   circ(x+o,y-7,2,y%6+1)
+   o=(o+k)%w-w/2
+  end
+ end
+ rect(x-5,x,9,40,3)
+ for y=0,k do
+  pix(99*y%240,(t+y)%k,12)
+  rect(4*y,k-s(y)+s(y*3)-t/x,4,999,12)
+ end
 end
 -- <TILES>
 -- 001:eccccccccc888888caaaaaaaca888888cacccccccacc0ccccacc0ccccacc0ccc

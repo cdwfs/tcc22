@@ -9,13 +9,13 @@ function TIC()
   for x=-q,q do
    pix(x+q,y+r,k-math.atan2(y,x)*2.55+k/(x*x+y*y+1)^.5-t)
   end
-	end
- for j=0,9 do
- for i=1,24 do
-  print(("Tiny Code Christmas 2022"):sub(i,i),
-  	i*24+k+j-9*t%850,9*s(t+i)+r+j,
-   3+j,0,3)
  end
+ for j=0,9 do
+  for i=1,24 do
+   print(("Tiny Code Christmas 2022"):sub(i,i),
+    i*24+k+j-9*t%850,9*s(t+i)+r+j,
+    3+j,0,3)
+  end
  end
 end
 -- <TILES>

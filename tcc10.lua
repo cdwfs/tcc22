@@ -37,7 +37,7 @@ function TIC()
  for x=1,9 do
   for y=1,24 do
    print(("Tiny Code Christmas"):sub(y,y),
-    24*y+x+x2-.9*t%999,12*-math.sin(y+.1*t)+x+68,
+    24*y+x+x2-t%999,12*-math.sin(y+.1*(x+t))+x+68,
     x+3,0,3)
   end
  end

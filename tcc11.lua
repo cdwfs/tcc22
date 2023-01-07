@@ -29,10 +29,10 @@ function TIC()
   )
 
  for i=1,#points do
- for j=0,2 do
+ for j=1,3 do
   circ(120+4000*points[i].x/points[i].z-j/2,
    68+4000*points[i].y/points[i].z-j/2,
-   3-j,
+   4/j,
    9*math.sin(angle)+points[i].x+points[i].y-j)
  end
  end

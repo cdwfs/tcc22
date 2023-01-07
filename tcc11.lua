@@ -18,8 +18,8 @@ function TIC()
  p=rotate({x=x,y=y,z=z},angle,'x','y','z')
  q=rotate(p,angle,'y','z','x')
  r=rotate(q,angle,'z','x','y')
- table.insert(points,
-  {x=r.x,y=r.y,z=r.z+400})
+ r.z=r.z+400
+ table.insert(points,r)
  end
  end
  end

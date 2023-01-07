@@ -1,11 +1,10 @@
 angle=0
 
-function rotate(p,angle,a1,a2,a3)
- out={}
- out[a1]=p[a1]
- out[a2]=p[a2]*math.cos(angle)-p[a3]*math.sin(angle)
- out[a3]=p[a3]*math.cos(angle)+p[a2]*math.sin(angle)
- return out
+function rotate(p,angle,a2,a3)
+ o2=p[a2]*math.cos(angle)-p[a3]*math.sin(angle)
+ o3=p[a3]*math.cos(angle)+p[a2]*math.sin(angle)
+ p[a2]=o2
+ p[a3]=o3
 end
 
 function TIC() 
@@ -15,11 +14,12 @@ function TIC()
  for x=-25,25,6 do
  for y=-25,25,6 do
  for z=-25,25,6 do
- p=rotate({x=x,y=y,z=z},angle,'x','y','z')
- q=rotate(p,angle,'y','z','x')
- r=rotate(q,angle,'z','x','y')
- r.z=r.z+400
- table.insert(points,r)
+ p={x=x,y=y,z=z}
+ rotate(p,angle,'y','z')
+ rotate(p,angle,'z','x')
+ rotate(p,angle,'x','y')
+ p.z=p.z+400
+ table.insert(points,p)
  end
  end
  end

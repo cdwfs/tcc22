@@ -11,9 +11,9 @@ function TIC()
  cls()
  points={}
  angle=angle+44
- for x=-25,25,6 do
- for y=-25,25,6 do
- for z=-25,25,6 do
+ for x=-4,4 do
+ for y=-4,4 do
+ for z=-4,4 do
  p={x=x,y=y,z=z}
  rotate(p,angle,'y','z')
  rotate(p,angle,'z','x')
@@ -30,10 +30,10 @@ function TIC()
 
  for i=1,#points do
  for j=0,2 do
-  circ(120+600*points[i].x/points[i].z-j/2,
-   68+600*points[i].y/points[i].z-j/2,
+  circ(120+4000*points[i].x/points[i].z-j/2,
+   68+4000*points[i].y/points[i].z-j/2,
    3-j,
-   14-j+points[i].x+points[i].y);
+   9*math.sin(angle)+points[i].x+points[i].y-j)
  end
  end
 end

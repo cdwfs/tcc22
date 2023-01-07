@@ -1,23 +1,11 @@
 angle=0
-function rotatey(p,angle)
- xt=p.x*math.cos(angle)-p.z*math.sin(angle)
- yt=p.y
- zt=p.x*math.sin(angle)+p.z*math.cos(angle)
- return{x=xt,y=yt,z=zt}
-end
 
-function rotatex(p,angle)
- xt=p.x
- yt=p.y*math.sin(angle+11)-p.z*math.sin(angle)
- zt=p.y*math.sin(angle)+p.z*math.sin(angle+11)
- return{x=xt,y=yt,z=zt}
-end
-
-function rotatez(p,angle)
- xt=p.x*math.sin(angle+11)-p.y*math.sin(angle)
- yt=p.x*math.sin(angle)+p.y*math.sin(angle+11)
- zt=p.z
- return{x=xt,y=yt,z=zt}
+function rotate(p,angle,a1,a2,a3)
+ out={}
+ out[a1]=p[a1]
+ out[a2]=p[a2]*math.cos(angle)-p[a3]*math.sin(angle)
+ out[a3]=p[a3]*math.cos(angle)+p[a2]*math.sin(angle)
+ return out
 end
 
 function TIC() 
@@ -27,9 +15,9 @@ function TIC()
  for x=-25,25,6 do
  for y=-25,25,6 do
  for z=-25,25,6 do
- p=rotatez({x=x,y=y,z=z},angle)
- q=rotatex(p,angle)
- r=rotatey(q,angle)  
+ p=rotate({x=x,y=y,z=z},angle,'x','y','z')
+ q=rotate(p,angle,'y','z','x')
+ r=rotate(q,angle,'z','x','y')
  table.insert(points,
   {x=r.x,y=r.y,z=r.z+400})
  end

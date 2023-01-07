@@ -33,7 +33,7 @@ function TIC()
   circ(120+600*points[i].x/points[i].z-j/2,
    68+600*points[i].y/points[i].z-j/2,
    3-j,
-   14-j);
+   14-j+points[i].x+points[i].y);
  end
  end
 end

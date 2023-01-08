@@ -1,15 +1,15 @@
 t=0
 function TIC()
  cls()
- t=t+.01
+ t=t+44
  points={}
- for r=1,10 do
+ for r=0,10 do
   -- rings
   for p=.2*r,22,1 do
    x=120 + 5*r*math.sin(p+t)
    y=18 + 10*r + 2*math.sin(r+4*t) - r/2*math.sin(p+t+11)
    z=math.sin(p+t+11)
-   c=12+7*math.sin(p+t+11)
+   c=12+7*math.sin(p+t+11)^3
 			table.insert(points,
 			 {x=x,y=y,z=z,c=c})
   end

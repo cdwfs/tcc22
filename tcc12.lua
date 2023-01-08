@@ -21,10 +21,10 @@ function TIC()
   function (a,b) return a.z>b.z end
   )
  for i=1,#points do
-  for j=0,2 do
+  for j=1,3 do
    circ(points[i].x-j/2,
     points[i].y-j/2,
-    3-j,
+    4/j,
     points[i].c-j
    ) 
   end

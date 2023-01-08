@@ -2,11 +2,31 @@ t=0
 function TIC()
  cls()
  t=t+.01
+ points={}
  for r=1,10 do
-  for p=0,44,.5 do
-   x=120+(5*r)*math.sin(p+t)
-   y=18+10*r+r*math.sin(p+t+11)
-   pix(x,y,12+6*math.sin(p+t+11))
+  -- rings
+  for p=.2*r,22,1 do
+   x=120 + 5*r*math.sin(p+t)
+   y=18 + 10*r + 2*math.sin(r+4*t) - r/2*math.sin(p+t+11)
+   z=math.sin(p+t+11)
+   c=12+7*math.sin(p+t+11)
+			table.insert(points,
+			 {x=x,y=y,z=z,c=c})
+  end
+  -- trunk
+  table.insert(points,
+   {x=118,y=50+8*r,z=0,c=2})
+ end
+ table.sort(points,
+  function (a,b) return a.z>b.z end
+  )
+ for i=1,#points do
+  for j=0,2 do
+   circ(points[i].x-j/2,
+    points[i].y-j/2,
+    3-j,
+    points[i].c-j
+   ) 
   end
  end
 end

@@ -5,7 +5,7 @@ function TIC()
  points={}
  for r=0,10 do
   -- rings
-  for p=.2*r,22,1 do
+  for p=r/10,44,2 do
    x=120 + 5*r*math.sin(p+t)
    y=18 + 10*r + 2*math.sin(r+4*t) - r/2*math.sin(p+t+11)
    z=math.sin(p+t+11)
@@ -20,12 +20,12 @@ function TIC()
  table.sort(points,
   function (a,b) return a.z>b.z end
   )
- for i=1,#points do
-  for j=1,3 do
-   circ(points[i].x-j/2,
-    points[i].y-j/2,
-    4/j,
-    points[i].c-j
+ for r=1,#points do
+  for p=1,3 do
+   circ(points[r].x-p/2,
+    points[r].y-p/2,
+    4/p,
+    points[r].c+p
    ) 
   end
  end

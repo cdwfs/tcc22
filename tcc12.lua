@@ -6,12 +6,12 @@ function TIC()
  for r=0,10 do
   -- rings
   for p=r/10,44,2 do
-   x=120 + 5*r*math.sin(p+t)
-   y=18 + 10*r + 2*math.sin(r+4*t) - r/2*math.sin(p+t+11)
-   z=math.sin(p+t+11)
-   c=12+7*math.sin(p+t+11)^3
 			table.insert(points,
-			 {x=x,y=y,z=z,c=c})
+			 {x=120 + 5*r*math.sin(p+t),
+				 y=18 + 10*r + 2*math.sin(r+4*t) - r/2*math.sin(p+t+11),
+					z=math.sin(p+t+11),
+					c=12+7*math.sin(p+t+11)^3
+					})
   end
   -- trunk
   table.insert(points,
